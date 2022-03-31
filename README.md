@@ -33,7 +33,7 @@ _`just for an assigment - don't burn your money on it *_*`_
 - Using binance client library to work with binance API through websocket and
   RESTful API depend on action. For example: using socket for order and waiting
   order success, RESTful for some action like check balance
-- Dashboard: In the context of assigment will
+- Dashboard: In the context of an assigment, will
   using [metabase](https://www.metabase.com/) to provide basic chart from
   database
 - _`binance exchange <----> iTradingBot --> Metabase`_
