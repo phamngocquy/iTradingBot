@@ -48,3 +48,8 @@
   - #todo
 
 #### REF: [binance trade bot](https://github.com/edeng23/binance-trade-bot)
+
+
+
+### Feedback
+Please make an ```issue`` if have any.
