@@ -37,3 +37,6 @@ strategy = momentum
 # 0 means that the order will never be cancelled prematurely.
 buy_timeout = 20
 sell_timeout = 20
+
+# Get top 24hr gainer using for some strategy eg: momentum
+top_24hr_gainer = 5

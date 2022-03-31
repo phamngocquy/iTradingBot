@@ -38,6 +38,10 @@ class Config:
             os.environ.get('IGNORE_COINS') or
             config.get(USER_CFG_SECTION, "ignore_coins")
         )
+        self.TOP_24HR_GAINER = int(
+            os.environ.get('TOP_24HR_GAINER') or
+            config.get(USER_CFG_SECTION, 'top_24hr_gainer')
+        )
         # Prune settings
         self.SCOUT_HISTORY_PRUNE_TIME = float(
             os.environ.get("HOURS_TO_KEEP_SCOUTING_HISTORY") or config.get(

@@ -44,7 +44,7 @@ class Strategy:
         """
         _logger.info('>>>>>>>>>>> Scouting')
         alt_coin_gainer24hr = self.manager.get_top_alt_gainer24hr(
-            topn=5
+            topn=self.config.TOP_24HR_GAINER
         )
         _logger.info(alt_coin_gainer24hr)
 
@@ -114,7 +114,7 @@ class Strategy:
                     coin, balance, usd_value,
                     btc_value, datetime=now
                 )
-                session.add(coin_valuev)
+                session.add(coin_value)
                 self.db.send_update(coin_value)
 
     def sell_alt_coin(self, alt_coin: Coin):
