@@ -11,12 +11,16 @@ from sqlalchemy.orm import Session
 from src.config import Config
 from src.database import Database
 from src.binance_api_manager import BinanceAPIManager
-from src.models import Coin, CoinValue, Pair
+from src.models import Coin, CoinValue
 
 _logger = logging.getLogger(__name__)
 
 
 class Strategy:
+    """
+        Define specify strategy
+    """
+
     def __init__(self, binance_manager: BinanceAPIManager,
                  database: Database,
                  config: Config):
@@ -72,7 +76,7 @@ class Strategy:
         """
 
         n_alt_coin = len(symbols)
-        for idx, symbol in enumerate(symbols):
+        for symbol in symbols:
             bridge_balance = self.manager.get_currency_balance(
                 self.config.BRIDGE.symbol, force=True
             )
@@ -106,12 +110,12 @@ class Strategy:
                     continue
                 usd_value = self.manager.get_ticker_price(coin + "USDT")
                 btc_value = self.manager.get_ticker_price(coin + "BTC")
-                cv = CoinValue(
+                coin_value = CoinValue(
                     coin, balance, usd_value,
                     btc_value, datetime=now
                 )
-                session.add(cv)
-                self.db.send_update(cv)
+                session.add(coin_valuev)
+                self.db.send_update(coin_value)
 
     def sell_alt_coin(self, alt_coin: Coin):
         """

@@ -1,7 +1,8 @@
 import enum
 from datetime import datetime as _datetime
 
-from sqlalchemy import Column, DateTime, Enum, Float, ForeignKey, Integer, String
+from sqlalchemy import Column, DateTime, Enum, Float, ForeignKey, Integer, \
+    String
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy.orm import relationship
 
@@ -33,13 +34,13 @@ class CoinValue(Base):
     datetime = Column(DateTime)
 
     def __init__(
-        self,
-        coin: Coin,
-        balance: float,
-        usd_price: float,
-        btc_price: float,
-        interval=Interval.MINUTELY,
-        datetime: _datetime = None,
+            self,
+            coin: Coin,
+            balance: float,
+            usd_price: float,
+            btc_price: float,
+            interval=Interval.MINUTELY,
+            datetime: _datetime = None,
     ):
         self.coin = coin
         self.balance = balance
@@ -50,25 +51,45 @@ class CoinValue(Base):
 
     @hybrid_property
     def usd_value(self):
+        """
+
+        :return:
+        """
         if self.usd_price is None:
             return None
         return self.balance * self.usd_price
 
     @usd_value.expression
     def usd_value(self):
+        """
+
+        :return:
+        """
         return self.balance * self.usd_price
 
     @hybrid_property
     def btc_value(self):
+        """
+
+        :return:
+        """
         if self.btc_price is None:
             return None
         return self.balance * self.btc_price
 
     @btc_value.expression
     def btc_value(self):
+        """
+
+        :return:
+        """
         return self.balance * self.btc_price
 
     def info(self):
+        """
+
+        :return:
+        """
         return {
             "balance": self.balance,
             "usd_value": self.usd_value,

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pylint --rcfile=./.pylintrc --fail-under=8 src
+pylint --rcfile=./.pylintrc --fail-under=6 src

@@ -16,6 +16,10 @@ _logger = logging.getLogger(__name__)
 
 
 class BinanceOrder:
+    """
+        Order object
+    """
+
     def __init__(self, report):
         self.event = report
         self.symbol = report["symbol"]
