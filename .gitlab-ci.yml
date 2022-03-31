@@ -1,0 +1,33 @@
+stages:
+  - lint
+  - release
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  paths:
+    - $CI_PROJECT_DIR/.cache/pip
+
+linter:
+  stage: lint
+  image: python:3.8.13-slim-buster
+  tags:
+    - docker
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+  script:
+    - pip3 install --no-cache-dir -U pip
+    - pip3 install -r requirements.txt
+    - bin/lint.sh
+
+release_to_registry:
+  stage: release
+  only:
+    - master
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
+    - ./bin/distribute.sh yes yes
+  tags:
+    - shell
+  when: manual

@@ -38,5 +38,13 @@
   database
 - _`binance exchange <----> iTradingBot --> Metabase`_
 
+### Install
+- local
+  - git clone git@gitlab.com:phamngocquy97/itradingbot.git
+  - configuration [user.conf](user.cfg.template)
+  - python3 app.py
+  
+- deploy
+  - #todo
 
 #### ref: [binance trade bot](https://github.com/edeng23/binance-trade-bot)
