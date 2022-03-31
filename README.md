@@ -36,7 +36,7 @@ _`just for an assigment - don't burn your money on it *_*`_
 - Dashboard: In the context of an assigment, will
   using [metabase](https://www.metabase.com/) to provide basic chart from
   database
-- _`binance exchange <----> iTradingBot <----> DataBase ----> Metabase`_
+- _`BinanceExchange <----> iTradingBot <----> DataBase ----> Metabase`_
 
 - In case of production need have change in kind of database, sytem scaling strategy and BI tool.
 ### Install
