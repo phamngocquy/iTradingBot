@@ -47,4 +47,4 @@
 - deploy
   - #todo
 
-#### ref: [binance trade bot](https://github.com/edeng23/binance-trade-bot)
+#### REF: [binance trade bot](https://github.com/edeng23/binance-trade-bot)
