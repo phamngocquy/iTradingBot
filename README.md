@@ -1,5 +1,5 @@
 ## MELD ASSIGNMENT PROJECT
-_`just for an assigment - don't burn your money on it`_
+_`just for an assigment - don't burn your money on it *_*`_
 ### problem
 
 - Xây dựng 1 bot thực hiện paper trading với thuật toán momentum hoặc reversal
