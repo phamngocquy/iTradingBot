@@ -38,6 +38,7 @@
   database
 - _`binance exchange <----> iTradingBot --> Metabase`_
 
+- In case of production need have change in kind of database, sytem scaling strategy and BI tool.
 ### Install
 - local
   - git clone git@gitlab.com:phamngocquy97/itradingbot.git
@@ -52,4 +53,4 @@
 
 
 ### Feedback
-Please make an ```issue`` if have any.
+Please make an ```issue``` if have any.
