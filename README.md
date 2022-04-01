@@ -35,7 +35,7 @@ _`just for an assigment - don't burn your money on it *_*`_
   order success, RESTful for some action like check balance
 - Dashboard: In the context of an assigment, will
   using [metabase](https://www.metabase.com/) to provide basic chart from
-  database
+  database #todo 
 - _`BinanceExchange <----> iTradingBot <----> DataBase ----> Metabase`_
 
 - In case of production need have change in kind of database, sytem scaling strategy and BI tool.
