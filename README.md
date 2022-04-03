@@ -1,5 +1,7 @@
 ## MELD ASSIGNMENT PROJECT
+
 _`just for an assigment - don't burn your money on it *_*`_
+
 ### problem
 
 - Xây dựng 1 bot thực hiện paper trading với thuật toán momentum hoặc reversal
@@ -35,22 +37,47 @@ _`just for an assigment - don't burn your money on it *_*`_
   order result, RESTful for some action like check balance
 - Dashboard: In the context of an assigment, will
   using [metabase](https://www.metabase.com/) to provide basic chart from
-  database #todo 
+  database #todo
 - _`BinanceExchange <----> iTradingBot <----> DataBase ----> Metabase`_
 
-- In case of production need have change in kind of database, sytem scaling strategy and BI tool.
+- In case of production need have change in kind of database, sytem scaling
+  strategy and BI tool.
+
 ### Install
+
 - local
-  - git clone git@gitlab.com:phamngocquy97/itradingbot.git
-  - configuration [user.conf](user.cfg.template)
-  - python3 app.py
-  
+    - git clone git@gitlab.com:phamngocquy97/itradingbot.git
+    - configuration [user.conf](user.cfg.template)
+    - python3 app.py
+
 - deploy
-  - #todo
+    - # todo
 
 #### REF: [binance trade bot](https://github.com/edeng23/binance-trade-bot)
 
-
-
 ### Feedback
+
 Please make an ```issue``` if have any.
+
+### Problem 2
+
+- Xây dựng database và dashboards tương tự như trên cho một hệ sinh thái cụ thể
+  là Avalanche. Trong đó mục tiêu là keep track Total value locked (TVL)  chảy
+  từ các blockchain khác TỚI Avalanche và TVL chảy TỪ Avalanche ra các
+  blockchain khác. Hãy xây dựng kế hoạch để giải quyết bài toán trên. Tham khảo
+  dữ liệu thô từ avascan.io trên cho một hệ sinh thái cụ thể là Avalanche. Trong
+  đó mục tiêu là keep track Total value locked (TVL)  chảy từ các blockchain
+  khác TỚI Avalanche và TVL chảy TỪ Avalanche ra các blockchain khác. Hãy xây
+  dựng kế hoạch để giải quyết bài toán trên. Tham khảo dữ liệu thô
+  từ [avascan.io](avascan.io)
+- Tham khảo:
+    - https://dune.xyz/eliasimos/Bridge-Away-(from-Ethereum)
+    - https://www.footprint.network/topic/DeFi/Cross-ChainBridge
+
+#### Solution
+
+- Basic Architecture
+  <img src="https://ucode-bk-dev.s3.ap-southeast-1.amazonaws.com/quypn/block_chain_dashboard.drawio.png" style="height: 360px; width: 640px"/>
+- Specifically: Todo
+
+  
