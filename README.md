@@ -78,6 +78,7 @@ Please make an ```issue``` if have any.
 
 - Basic Architecture
 <img src="https://ucode-bk-dev.s3.ap-southeast-1.amazonaws.com/quypn/block_chain_dashboard.drawio.png" style="height: 360px; width: 640px"/>
+
 - Specifically: Todo
 
   
