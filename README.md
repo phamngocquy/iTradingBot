@@ -1,5 +1,8 @@
 ## MELD ASSIGNMENT PROJECT
 
+[`Gitlab`](https://gitlab.com/phamngocquy97/itradingbot)
+[`Github`](https://github.com/phamngocquy/iTradingBot)
+
 ### Lý thuyết
 
 [Bài làm](QA.md)
