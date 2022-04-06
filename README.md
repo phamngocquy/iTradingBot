@@ -1,5 +1,11 @@
 ## MELD ASSIGNMENT PROJECT
 
+### Lý thuyết
+
+[Bài làm](QA.md)
+
+### Thực hành
+
 _`just for an assigment - don't burn your money on it *_*`_
 
 ### problem
