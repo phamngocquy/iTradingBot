@@ -45,7 +45,7 @@
 8. **So sánh Muesliswap với Uniswap và đưa ra nhận xét**:
     1. UNISWAP:
         1. Based on Ethereum
-        2. hoạt động dựa trên một thiết kế có tên gọi là Constant Product Market
+        2. Hoạt động dựa trên một thiết kế có tên gọi là Constant Product Market
            Maker (Công cụ Tạo lập Thị trường Sản phẩm Không đổi), một biến thể
            của mô hình Công cụ Tạo lập Thị trường Tự động (Automated Market
            Marker - AMM).
@@ -162,13 +162,20 @@
            Chain/Binance Smart Chain với tỷ lệ 1:1 neo với số lượng BTC đã được
            locked trong Bitcoin blockchain.
            <img src="https://www.kenhbit.com/wp-content/uploads/2022/01/a3bd5cf6-bf70-4604-9ebb-295d39b22b41.png" style="height: 360px; width: 640px"/>
-3. **nêu ra những khó khăn mà việc xây dựng một cross chain bridge như
-   ADAmatic (từ Cardano sang Polygon) có thể gặp phải (technology, security
-   etc.)**
-    1. ADAmatic: MELD and VENT are co-leading the development of ADAmatic, a
+    3. **Nêu ra những khó khăn mà việc xây dựng một cross chain bridge như
+       ADAmatic (từ Cardano sang Polygon) có thể gặp phải (technology, security
+       etc.)**
+       _ADAmatic: MELD and VENT are co-leading the development of ADAmatic, a
        pioneer ecosystem project that will connect the prominent Cardano
-       blockchain with the Ethereum scaling L2, Polygon chain.
-    2. ..can't find anything about the specs documentation
+       blockchain with the Ethereum scaling L2, Polygon chain._
+        1. Security problem: Cross-chain là mục tiêu tấn công của hacker trong
+           thời gian gần đây. Một số vụ tấn công điển hình như Wormhole Bridge
+           Exploit, Qubit Bridge Exploit, Meter.io Bridge Exploit, Ronin Bridge
+           Exploit etc. Sơ đồ tấn công phổ biến vào cross-chain
+           bridge <img src="https://ucode-bk-dev.s3.ap-southeast-1.amazonaws.com/quypn/Screen+Shot+2022-04-07+at+02.39.22.png" alt="Common attack vector on Bridges">
+           Mặc dù ADAmatic triển khai trên công nghệ layer-2 của Ethereum với
+           nhiều ưu điểm về bảo mật và tốc độ, nhưng không thể phủ nhận nguy cơ
+           bị tấn công.
 
 #### 4. (Stablecoin) Liệt kê các phương pháp để bình ổn giá của một stablecoin được backed bởi một fiat currency. Đưa ra đánh giá cá nhân nếu có thể.
 
