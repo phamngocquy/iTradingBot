@@ -3,9 +3,7 @@
 [`Gitlab`](https://gitlab.com/phamngocquy97/itradingbot)
 [`Github`](https://github.com/phamngocquy/iTradingBot)
 
-### Lý thuyết
-
-[Bài làm](QA.md)
+### Lý thuyết: [_Bài làm_](QA.md)
 
 ### Thực hành
 
