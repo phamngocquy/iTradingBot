@@ -8,7 +8,7 @@ class Coin(Base):
     symbol = Column(String, primary_key=True)
     enabled = Column(Boolean)
 
-    def __init__(self, symbol, enabled=True):
+    def __init__(self, symbol, enabled=False):
         self.symbol = symbol
         self.enabled = enabled
 

@@ -38,7 +38,7 @@ class Trade(Base):  # pylint: disable=too-few-public-methods
     alt_trade_amount = Column(Float)
     crypto_starting_balance = Column(Float)
     crypto_trade_amount = Column(Float)
-
+    transaction_fee = Column(Float, default=0)
     datetime = Column(DateTime)
 
     def __init__(self, alt_coin: Coin, crypto_coin: Coin, selling: bool):
@@ -59,5 +59,6 @@ class Trade(Base):  # pylint: disable=too-few-public-methods
             "alt_trade_amount": self.alt_trade_amount,
             "crypto_starting_balance": self.crypto_starting_balance,
             "crypto_trade_amount": self.crypto_trade_amount,
+            "transaction_fee": self.transaction_fee,
             "datetime": self.datetime.isoformat(),
         }

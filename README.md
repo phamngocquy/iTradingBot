@@ -48,16 +48,27 @@ _`just for an assigment - don't burn your money on it *_*`_
 - local
     - git clone git@gitlab.com:phamngocquy97/itradingbot.git
     - configuration [user.conf](user.cfg.template)
-    - python3 app.py
+    - docker-compose up -f docker-compose.yaml -d
+    - dashboard: http:localhost:3000
 
 - deploy
-    - # todo
+    - todo
+
+<img src="https://ucode-bk-dev.s3.ap-southeast-1.amazonaws.com/quypn/Screen+Shot+2022-04-07+at+01.22.20.png">
 
 #### REF: [binance trade bot](https://github.com/edeng23/binance-trade-bot)
 
 ### Feedback
 
 Please make an ```issue``` if have any.
+
+#### Note:
+
+Binance Extends the Zero Trading Fee Promotion to All USD Stablecoin Trading
+Pairs. Fellow Binancians, To further enhance the liquidity on the stablecoin
+trading pairs and provide a better trading experience for all users, Binance is
+extending the Zero Trading Fee Promotion to include all USD stablecoin trading
+pairs. Feb 13, 2022
 
 ### Problem 2
 
@@ -77,7 +88,7 @@ Please make an ```issue``` if have any.
 #### Solution
 
 - Basic Architecture
-<img src="https://ucode-bk-dev.s3.ap-southeast-1.amazonaws.com/quypn/block_chain_dashboard.drawio.png" style="height: 360px; width: 640px"/>
+  <img src="https://ucode-bk-dev.s3.ap-southeast-1.amazonaws.com/quypn/block_chain_dashboard.drawio.png" style="height: 360px; width: 640px"/>
 
 - Specifically: Todo
 

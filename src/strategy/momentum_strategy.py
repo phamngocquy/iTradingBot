@@ -108,8 +108,14 @@ class Strategy:
                 balance = self.manager.get_currency_balance(coin.symbol)
                 if balance == 0:
                     continue
-                usd_value = self.manager.get_ticker_price(coin + "USDT")
-                btc_value = self.manager.get_ticker_price(coin + "BTC")
+                if coin.symbol == self.config.BRIDGE.symbol:
+                    usd_value = 1
+                else:
+                    usd_value = self.manager.get_ticker_price(
+                        coin.symbol + "USDT"
+                    )
+                btc_value = self.manager.get_ticker_price(coin.symbol + "BTC")
+
                 coin_value = CoinValue(
                     coin, balance, usd_value,
                     btc_value, datetime=now
