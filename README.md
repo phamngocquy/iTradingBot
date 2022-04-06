@@ -28,7 +28,7 @@ _`just for an assigment - don't burn your money on it *_*`_
           độ trễ là bao nhiêu etc.
         - Không nhất thiết chiến thuật phải tạo ra net P/L dương, vì mục tiêu là
           thiết kế software.
-        - Bonus) Làm dashboard để monitor chiến thuật để người quản lý danh mục
+        - (Bonus) Làm dashboard để monitor chiến thuật để người quản lý danh mục
 
 ### Solution
 
@@ -40,35 +40,27 @@ _`just for an assigment - don't burn your money on it *_*`_
   database #todo
 - _`BinanceExchange <----> iTradingBot <----> DataBase ----> Metabase`_
 
-- In case of production need have change in kind of database, sytem scaling
+- In case of production need have a change in kind of database, sytem scaling
   strategy and BI tool.
 
 ### Install
 
-- local
+- Local
     - git clone git@gitlab.com:phamngocquy97/itradingbot.git
     - configuration [user.conf](user.cfg.template)
-    - docker-compose up -f docker-compose.yaml -d
-    - dashboard: http:localhost:3000
+    - docker-compose up -f docker-compose.yml -d
+    - dashboard: http://localhost:3000
 
-- deploy
+- CD:
     - todo
 
-<img src="https://ucode-bk-dev.s3.ap-southeast-1.amazonaws.com/quypn/Screen+Shot+2022-04-07+at+01.22.20.png">
+<img src="https://ucode-bk-dev.s3.ap-southeast-1.amazonaws.com/quypn/Screen+Shot+2022-04-07+at+01.22.20.png" alt="Sample">
 
 #### REF: [binance trade bot](https://github.com/edeng23/binance-trade-bot)
 
 ### Feedback
 
-Please make an ```issue``` if have any.
-
-#### Note:
-
-Binance Extends the Zero Trading Fee Promotion to All USD Stablecoin Trading
-Pairs. Fellow Binancians, To further enhance the liquidity on the stablecoin
-trading pairs and provide a better trading experience for all users, Binance is
-extending the Zero Trading Fee Promotion to include all USD stablecoin trading
-pairs. Feb 13, 2022
+Please make an ```issue``` if any.
 
 ### Problem 2
 
@@ -89,7 +81,21 @@ pairs. Feb 13, 2022
 
 - Basic Architecture
   <img src="https://ucode-bk-dev.s3.ap-southeast-1.amazonaws.com/quypn/block_chain_dashboard.drawio.png" style="height: 360px; width: 640px"/>
-
-- Specifically: Todo
+- In detail, the most challenge of this problem this design a system can handle
+  high throughput data and support both streaming and batch processing.
+- Above is the basic architecture include three main module.
+    - Ingest: This module responsibility for collect data from sources. In this
+      case is chasing data from the blockchain.
+    - Process - Storage: This module responsibility for storage raw data,
+      post-process data and the processing include stream and batch. Most
+      popular technology for this module is implement spark-cluster for process
+      data. On other hand, for the data storage choose the technology depend on
+      the kind of data and some other thing like the business. In my experience,
+      should have storage for raw data (data lake) and a storage for
+      post-processing data which serving data for the visualization. Minio,
+      Timeseries database should be good for this problem.
+    - Visualize: Data come from storage then visualize by end-user. In fact,
+      have quite product support visualize data such as redash, metabase,
+      grafana, kibana...
 
   
