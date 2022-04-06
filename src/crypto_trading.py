@@ -12,7 +12,7 @@ _logger = logging.getLogger(__name__)
 
 
 def main():
-    _logger.error("Starting")
+    _logger.info("Starting")
 
     config = Config()
     db = Database(config)
@@ -42,9 +42,9 @@ def main():
     schedule = SafeScheduler()
     schedule.every(config.SCOUT_SLEEP_TIME) \
         .hours.do(trader.scout).tag("scouting")
-    schedule.run_all()
+    # schedule.run_all()
 
-    schedule.every(1).minutes.do(trader.update_values) \
+    schedule.every(10).seconds.do(trader.update_values) \
         .tag("updating value history")
     schedule.every(1).minutes.do(db.prune_scout_history).tag(
         "pruning scout history")

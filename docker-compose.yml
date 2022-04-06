@@ -1,0 +1,32 @@
+version: '3'
+services:
+  back-end:
+    image: itradingbot
+    environment:
+      - TZ=Asia/Ho_Chi_Minh
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python3 app.py
+    volumes:
+      - ./logs:/var/app/logs
+      - ./data:/var/app/data
+      - ./user.cfg:/var/app/user.cfg
+    depends_on:
+      - metabase
+
+  metabase:
+    image: metabase/metabase:latest
+    volumes:
+      - ./metabase-data:/metabase-data
+      - ./data:/metabase-data/itradingbot/data:ro
+    environment:
+      - MB_DB_FILE=/metabase-data/metabase.db
+      - JAVA_TIMEZONE=Asia/Ho_Chi_Minh
+      - TZ=Asia/Ho_Chi_Minh
+    ports:
+      - "3000:3000"
+
+volumes:
+  redis-data:
+

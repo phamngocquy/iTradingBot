@@ -81,8 +81,8 @@ class Database:
                 )
                 if coin is None:
                     records.append(Coin(symbol))
-                else:
-                    coin.enabled = False
+                # else:
+                #     coin.enabled = False
             session.bulk_save_objects(records)
 
         # For all the combinations of coins
@@ -334,7 +334,7 @@ class TradeLog:
             self.db.send_update(self.trade)
 
     def set_ordered(self, alt_starting_balance, crypto_starting_balance,
-                    alt_trade_amount):
+                    alt_trade_amount, transaction_fee):
         session: Session
         with self.db.db_session() as session:
             trade: Trade = session.merge(self.trade)
@@ -342,6 +342,7 @@ class TradeLog:
             trade.alt_trade_amount = alt_trade_amount
             trade.crypto_starting_balance = crypto_starting_balance
             trade.state = TradeState.ORDERED
+            trade.transaction_fee = transaction_fee
             self.db.send_update(trade)
 
     def set_complete(self, crypto_trade_amount):

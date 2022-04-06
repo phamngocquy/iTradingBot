@@ -1,6 +1,5 @@
 # coding=utf-8
 import logging
-
 import sys
 import threading
 import time
@@ -10,6 +9,7 @@ from typing import Dict, Set, Tuple
 import binance.client
 from binance.exceptions import BinanceAPIException, BinanceRequestException
 from unicorn_binance_websocket_api import BinanceWebSocketApiManager
+
 from src.config import Config
 
 _logger = logging.getLogger(__name__)

@@ -52,7 +52,8 @@ class BinanceAPIManager:
     def get_using_bnb_for_fees(self):
         return self.binance_client.get_bnb_burn_spot_margin()["spotBNBBurn"]
 
-    def get_fee(self, origin_coin: Coin, target_coin: Coin, selling: bool):
+    def get_fee(self, origin_coin: Coin, target_coin: Coin, selling: bool,
+                limit_balance=None):
         base_fee = self.get_trade_fees()[origin_coin + target_coin]
         if not self.get_using_bnb_for_fees():
             return base_fee
@@ -61,7 +62,8 @@ class BinanceAPIManager:
         amount_trading = (
             self._sell_quantity(origin_coin.symbol, target_coin.symbol)
             if selling
-            else self._buy_quantity(origin_coin.symbol, target_coin.symbol)
+            else self._buy_quantity(origin_coin.symbol, target_coin.symbol,
+                                    limit_balance)
         )
 
         fee_amount = amount_trading * base_fee * 0.75
@@ -359,6 +361,7 @@ class BinanceAPIManager:
         # Try to buy until successful
         order = None
         order_guard = self.stream_manager.acquire_order_guard()
+        transaction_fee = 0
         while order is None:
             try:
                 order = self.binance_client.order_limit_buy(
@@ -367,13 +370,17 @@ class BinanceAPIManager:
                     price=from_coin_price_s,
                 )
                 _logger.info(order)
+                _logger.info("transaction fee: %s", transaction_fee)
+                transaction_fee = self.get_fee(origin_coin, target_coin,
+                                               selling=False)
             except BinanceAPIException as e:
                 _logger.info(e)
                 time.sleep(1)
             except Exception as e:  # pylint: disable=broad-except
                 _logger.warning(f"Unexpected Error: {e}")
 
-        trade_log.set_ordered(origin_balance, target_balance, order_quantity)
+        trade_log.set_ordered(origin_balance, target_balance, order_quantity,
+                              transaction_fee)
 
         order_guard.set_order(origin_symbol, target_symbol,
                               int(order["orderId"]))
@@ -435,7 +442,7 @@ class BinanceAPIManager:
         _logger.info(f"Selling {order_quantity} of {origin_symbol}")
 
         _logger.info(f"Balance is {origin_balance}")
-        order = None
+        order, transaction_fee = None, 0
         order_guard = self.stream_manager.acquire_order_guard()
         while order is None:
             # Should sell at calculated price to avoid lost coin
@@ -443,12 +450,16 @@ class BinanceAPIManager:
                 symbol=origin_symbol + target_symbol, quantity=order_quantity_s,
                 price=from_coin_price_s
             )
-            print('xxx')
+            transaction_fee = self.get_fee(origin_coin, target_coin,
+                                           selling=True)
+            _logger.info(order)
+            _logger.info("transaction free %s", transaction_fee)
 
-        _logger.info("order")
+        _logger.info("order success")
         _logger.info(order)
 
-        trade_log.set_ordered(origin_balance, target_balance, order_quantity)
+        trade_log.set_ordered(origin_balance, target_balance, order_quantity,
+                              transaction_fee)
 
         order_guard.set_order(origin_symbol, target_symbol,
                               int(order["orderId"]))
