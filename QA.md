@@ -190,14 +190,32 @@
        định khác như đồng tiền pháp lý (USD, SGD, EUR) hoặc tài sản khác như
        vàng, gọi chung là các tài sản đảm bảo. Những tài sản đảm bào này được
        nắm giữ bở một tổ chức tài chính do bên thứ ba năm giữ.
-3. **Các phương pháp bình ổn giá của một stable coin fiat-backed - USDT**:
-    1. USDT stabilized price bằng cách, mỗi USDT được bảo trợ bởi một USD tại
-       cục dự trữ Tether Limited. Về các thức hoạt động, người dùng sử dụng tiền
-       pháp lý để mua 1 USDT, Tether sẽ sinh ra token tương ứng và đồng USDT
-       ngường dùng mua được định giá ~ 1 USD.
-    2. Đánh giá cá nhân: Đối với trường hợp của USDT, tài sản đảm bảo (USD) sẽ
-       được lưu trữ tại Tether Limited. Điều này đi ngược với đặc điểm của công
-       nghệ blockchain. Tài sản đảm bảo được lưu trữ tập trung tại một tổ chứ tư
-       nhân. Có thể dẫn tới rủi ro về việc thiếu minh bạch trong cách quản lý
-       tài sản dự trữ của nhà quản lý.
-    
+3. **Các phương pháp bình ổn giá của một stable coin fiat-backed**: Ngoài việc
+   neo vào một loại tài sản hay tiền pháp định như cách làm của Tether. Một số
+   stablecoin khác bình ổn giá dựa vào các cơ chế Algorithmic. Một số stablecoin
+   điển hình như Terra, DAI, AMPL...Algorithmic ở đây hiểu đơn giản là các thuật
+   toán có chức năng tự động bình ổn giá. Dựa vào việc điều chỉnh nguồn cung,
+   burn token...Ví dụ: Đối với TerraUSD, là một algorithmic stablecoin và chi
+   phí để tạo ra một stablecoin bằng đúng với mệnh giả của stablecoin được đúc.
+   Để đúng một TerraUSD cần phải đốt số lượng LUNA trị giá 1 USD tại thời điểm
+   đó.
+
+[//]: # (    1. USDT stabilized price bằng cách, mỗi USDT được bảo trợ bởi một USD tại)
+
+[//]: # (       cục dự trữ Tether Limited. Về các thức hoạt động, người dùng sử dụng tiền)
+
+[//]: # (       pháp lý để mua 1 USDT, Tether sẽ sinh ra token tương ứng và đồng USDT)
+
+[//]: # (       ngường dùng mua được định giá ~ 1 USD.)
+
+[//]: # (    2. Đánh giá cá nhân: Đối với trường hợp của USDT, tài sản đảm bảo &#40;USD&#41; sẽ)
+
+[//]: # (       được lưu trữ tại Tether Limited. Điều này đi ngược với đặc điểm của công)
+
+[//]: # (       nghệ blockchain. Tài sản đảm bảo được lưu trữ tập trung tại một tổ chứ tư)
+
+[//]: # (       nhân. Có thể dẫn tới rủi ro về việc thiếu minh bạch trong cách quản lý)
+
+[//]: # (       tài sản dự trữ của nhà quản lý.)
+
+	
