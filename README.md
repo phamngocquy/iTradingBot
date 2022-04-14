@@ -88,7 +88,7 @@ Please make an ```issue``` if any.
 
 - Basic Architecture
   <img src="https://ucode-bk-dev.s3.ap-southeast-1.amazonaws.com/quypn/block_chain_dashboard.drawio.png" style="height: 360px; width: 640px"/>
-- In detail, the most challenge of this problem this design a system can handle
+- In detail, the most challenge of this problem is design a system can handle
   high throughput data and support both streaming and batch processing.
 - Above is the basic architecture include three main module.
     - Ingest: This module responsibility for collect data from sources. In this
